@@ -1,2 +1,2 @@
 # flw-blog-app
-Link to https://doodleschedulling.netlify.app/
+Link to https://flw-blog.netlify.app/
