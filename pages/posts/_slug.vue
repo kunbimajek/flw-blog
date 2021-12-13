@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="section section__post">
-            <PostDetails :post="this.post[0]" />
+            <BlogPostDetails :post="this.post[0]" />
         </section>
         <section class="section section__blogs">
             <h3 class="section__heading">More Articles</h3>
@@ -19,12 +19,8 @@
 </template>
 
 <script>
-import PostDetails from "~/components/blog/PostDetails.vue";
 
 export default {
-    components: {
-        PostDetails,
-    },
     async asyncData({ store, params }) {
         await store.dispatch("posts/fetchPosts");
 
