@@ -1,0 +1,148 @@
+@import '../fonts/fonts'
+@import '../css/variables'
+
+// General Styles
+*, *::before, *::after
+    box-sizing: border-box
+
+html,
+body
+    padding: 0
+    margin: 0
+    font-family: $fontstack-text
+    color: $body-text
+    line-height: $default-lh
+    font-size: $basefont
+    max-width: 1144px
+    margin: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+h1, h2, h3, h4, h5, h6
+    color: $secondarycolor
+
+h1, h2, h3, h4, h5, h6, p
+    margin: 0
+
+h1
+    font-size: $largexxfont
+    line-height: $largexx-lh
+
+h2
+    font-size: $largexfont
+    line-height: $largex-lh
+
+h3
+    font-size: $largefont
+    line-height: $large-lh
+
+h4
+    font-size: $mediumxfont
+    line-height: $mediumx-lh
+
+h5
+    font-size: $mediumfont
+    line-height: $medium-lh
+
+h6
+    font-size: $basefont
+    line-height: $default-lh
+
+small
+    font-size: $smallfont
+    line-height: $small-lh
+    display: inline-block
+
+a
+    display: inline-block
+    text-decoration: none
+    &:hover
+        text-decoration: none
+        cursor: pointer
+    &:visited
+        color: inherit
+
+ul
+    list-style: none
+    margin: 0
+    padding: 0
+li
+    display: inline-block
+
+button
+    outline: none
+    box-shadow: none
+    border: 0
+    cursor: pointer
+
+@keyframes pulse 
+    0% 
+        box-shadow: 0 0 0 0 adjust-hue(#000, 45deg)
+
+.btn
+    font-size: $basefont
+    color: white
+    text-align: center
+    white-space: nowrap
+    padding: 12px 55px
+    font-size: 18px
+    font-weight: lighter
+    transition: 1s
+    &--primary
+        background: #000
+    &--pulse
+        &:hover, 
+        &:focus 
+            animation: pulse 1s
+            box-shadow: 0 0 0 2em rgba(#fff,0)
+            border-color: adjust-hue(#000, 45deg)
+    &--bordered
+        background: transparent
+        color: black
+        border: 1px solid black
+        &:hover
+            background: $secondarycolor
+            color: white
+            
+.sub
+    color: $darkgrey !important
+    &--lighter
+        color: $body-text !important
+    &--with-dot
+        &::before
+            content: '.'
+            padding: 0 5px 0 3px
+            position: relative
+            bottom: 2px
+            font-size: 16px
+
+[class*="cols"]
+    display: flex
+    position: relative
+    width: 100%
+    flex: 0 0 100%
+    max-width: 0 0 100%
+    padding-right: 23px
+    padding-left: 23px
+    @media #{$xlargedown}
+        padding-right: 15px
+        padding-left: 15px
+
+.cols-4
+    @media #{$largeup}
+        flex: 33.333333%
+        max-width: 33.333333%
+    @media #{$mediumup} and (max-width: 991px)
+        flex: 0 0 50%
+        max-width: 0 0 50%
+
+.my-50
+    margin: 50px 0
+
+.text-center
+    text-align: center
+
+.flex-centered
+    display: flex
+    align-items: center
+    justify-content: space-between

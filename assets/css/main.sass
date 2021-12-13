@@ -1,0 +1,169 @@
+@import '../css/globals'
+
+.header
+    @extend .flex-centered
+    padding: 10px
+    @media #{$xlargedown}
+        padding: 10px 20px
+
+.socials
+    display: flex
+    align-items: center
+    &__list-item
+        transition: all .2s ease-in-out
+        &:hover
+            @media #{$largeup}
+                opacity: 0.7
+        &:not(:last-child)::after
+            content: '.'
+            padding: 0 9px
+            position: relative
+            bottom: 8px
+
+.footer
+    text-align: center
+    padding: 50px 20px 235px
+    &__text
+        margin: 12px auto 35px
+        font-size: 20px
+        line-height: 30px
+        &--bold
+            font-weight: 700
+
+.section
+    padding: 50px 0
+    @media #{$xlargedown}
+        padding: 50px 10px
+    &__row
+        display: flex
+        flex-wrap: wrap
+        margin-right: -23px
+        margin-left: -23px
+        @media #{$xlargedown}
+            margin-right: -15px
+            margin-left: -15px
+    &__heading
+        font-family: $fontstack-bold
+        font-weight: 900
+        margin-bottom: 25px
+    &__post
+        max-width: 730px
+        margin: auto
+
+.card
+    position: relative
+    border: 1px solid #F5F5F5
+    border-radius: 5px
+    padding: 9px
+    margin-bottom: 55px
+    transition: 1s
+    width: 100%
+    @media #{$mediumup}
+        &:hover
+            box-shadow: 0px 0px 10px 5px #e9e8e8
+        &--full
+            display: inline-flex
+            > span 
+                flex: 1
+                max-width: 500px
+    &__image
+        width: 100%
+        height: 200px
+        object-fit: cover
+        margin-bottom: 6px
+        border-radius: 5px
+        @media #{$mediumup}
+            .card--full &
+                max-width: 500px
+                height: 280px
+                flex: 1
+                margin-bottom: 0
+                border-radius: 0
+        @media #{$mediumup} and (max-width: 991px)
+            .card--full &
+                max-width: 50%
+    &__body
+        display: flex
+        flex-direction: column
+        min-height: 200px
+        @media #{$mediumup}
+            .card--full &
+                padding-left: 15px
+                flex: 1
+    &__texts
+        flex-grow: 1
+    &__title
+        font-family: $fontstack-bold
+        font-weight: bold !important
+        margin: 6px 0 4px
+        font-weight: bold
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        overflow: hidden
+        @media #{$mediumup}
+            .card--full &
+                font-weight: 900 !important
+                font-size: $mediumxfont
+                line-height: 28px
+                margin: 4px 0 12px
+    &__content
+        margin-bottom: 20px
+        display: -webkit-box
+        -webkit-line-clamp: 4
+        -webkit-box-orient: vertical
+        overflow: hidden
+    &__footer
+        @extend .flex-centered
+        font-size: 12px
+        > span 
+            display: contents
+        &__link
+            color: $primarycolor !important
+            font-weight: 600
+            background-image: linear-gradient(180deg, transparent 65%, #d0e2fc 0)
+            transition: .3s all ease-in-out
+            background-repeat: no-repeat
+            background-size: 0 100%
+            &:hover 
+                @media #{$largeup}
+                    background-size: 100% 100%
+            svg
+                vertical-align: top
+
+.post
+    margin-top: 20px
+    &__title
+        font-family: $fontstack-bold
+        font-weight: 900
+        margin: 3px 0 20px
+    &__content
+        img
+            width: 100%
+            height: auto
+            object-fit: cover
+        iframe
+            width: 100%
+        .wp-caption
+            width: 100% !important
+            text-align: center
+            margin: 30px 0
+            img
+                max-width: 510px
+        h2, h3, h4, h5, h6
+            font-family: $fontstack-bold
+            font-weight: bold !important
+            margin: 10px 0
+        h2
+            font-size: 24px
+        ul
+            li
+                padding-bottom: 10px
+        a
+            color: $primarycolor
+
+        p
+            padding-bottom: 20px
+            a
+                color: $primarycolor
+                text-decoration: underline
