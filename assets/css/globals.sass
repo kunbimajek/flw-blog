@@ -105,7 +105,13 @@ button
         &:hover
             background: $secondarycolor
             color: white
-            
+    &--disabled
+        color: $body-text
+        border-color: $body-text
+        &:hover
+            color: $body-text
+            background-color: white
+            border-color: $body-text
 .sub
     color: $darkgrey !important
     &--lighter
